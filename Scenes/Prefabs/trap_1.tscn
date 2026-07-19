@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://cb8e62red7kc0"]
+
+[ext_resource type="Script" uid="uid://ilt0pmh4lihe" path="res://Scenes/Prefabs/trap.gd" id="1_ai3ps"]
+[ext_resource type="Texture2D" uid="uid://jaegp53ccc7w" path="res://Assets/Spritesheet/platformPack_tilesheet.png" id="2_ai3ps"]
+[ext_resource type="Texture2D" uid="uid://dsqhpet4dfpn8" path="res://Assets/Spritesheet/bullet.png" id="3_x5wuc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dhnh1"]
+radius = 31.06445
+
+[sub_resource type="Animation" id="Animation_4q5vp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_2ujhx"]
+resource_name = "move"
+length = 3.0000000000000004
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.283185307179586]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mubd7"]
+_data = {
+&"RESET": SubResource("Animation_4q5vp"),
+&"move": SubResource("Animation_2ujhx")
+}
+
+[sub_resource type="Curve" id="Curve_kxvsm"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.494709, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_ra8j0"]
+offsets = PackedFloat32Array(0.625, 1)
+colors = PackedColorArray(0.914063, 0.734375, 0, 1, 1, 1, 1, 0)
+
+[node name="Trap" type="Area2D" unique_id=242563240]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_ai3ps")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1851405835]
+shape = SubResource("CircleShape2D_dhnh1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1517398424]
+libraries/ = SubResource("AnimationLibrary_mubd7")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1512725227]
+
+[node name="PlatformPackTilesheet" type="Sprite2D" parent="Node2D" unique_id=278385234]
+texture = ExtResource("2_ai3ps")
+hframes = 14
+vframes = 7
+frame = 71
+
+[node name="FireSparkles" type="CPUParticles2D" parent="Node2D" unique_id=1937929060]
+position = Vector2(-48, -1.9073486e-06)
+rotation = -1.3089969
+amount = 6
+texture = ExtResource("3_x5wuc")
+lifetime = 0.5
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 80.0
+damping_min = 0.5
+damping_max = 0.5
+scale_amount_min = 0.1
+scale_amount_max = 0.3
+scale_amount_curve = SubResource("Curve_kxvsm")
+color = Color(0.99215686, 0, 0, 1)
+color_ramp = SubResource("Gradient_ra8j0")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
