@@ -89,3 +89,7 @@ Assets/
 
 **Modified for Educational Use By**
 - College of Computing, Khon Kaen University
+
+
+## Credits
+-นราธิป พรหมประกาย
