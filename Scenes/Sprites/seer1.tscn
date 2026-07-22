@@ -1,0 +1,260 @@
+[gd_scene format=3 uid="uid://bqxn4j75lvl1k"]
+
+[ext_resource type="Texture2D" uid="uid://st1u4ua3rlhx" path="res://Assets/Seer1/Left Leg.png" id="1_lkv8n"]
+[ext_resource type="Texture2D" uid="uid://er1asqk3e4p4" path="res://Assets/Seer1/Right Leg.png" id="2_sfh8q"]
+[ext_resource type="Texture2D" uid="uid://dlhtoy5k2wy3m" path="res://Assets/Seer1/Left Hand.png" id="3_27n2b"]
+[ext_resource type="Texture2D" uid="uid://clrxo476rlpg3" path="res://Assets/Seer1/Left Arm.png" id="4_2mely"]
+[ext_resource type="Texture2D" uid="uid://cam4y7lwvnnke" path="res://Assets/Seer1/Body.png" id="5_r8nvo"]
+[ext_resource type="Texture2D" uid="uid://bg8uoiexb4ixc" path="res://Assets/Seer1/Head.png" id="6_fv08n"]
+[ext_resource type="Texture2D" uid="uid://y75bmhvmc2ar" path="res://Assets/Seer1/Face 01.png" id="7_13bjv"]
+[ext_resource type="Texture2D" uid="uid://cieqmjvcqxhb" path="res://Assets/Seer1/Right Hand.png" id="8_2v773"]
+[ext_resource type="Texture2D" uid="uid://ilots688ivwf" path="res://Assets/Seer1/Right Arm.png" id="9_7ynyw"]
+[ext_resource type="Texture2D" uid="uid://cs0at12n1v508" path="res://Assets/Seer1/Sword.png" id="10_tb0vb"]
+
+[sub_resource type="Animation" id="Animation_2ms5u"]
+resource_name = "Attack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D/RightArm/RightHand/Sword:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.67, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(24, 16), Vector2(24, 16), Vector2(24, 16), Vector2(24, 16)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/RightArm/RightHand/Sword:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.67, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.10298902, 0.6086935, -0.6516504, -0.5024412]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node2D/RightArm:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(7, 184), Vector2(7, 184)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Node2D/RightArm:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-1.2445824, 0.40537894]
+}
+
+[sub_resource type="Animation" id="Animation_bjgfi"]
+resource_name = "Idle"
+length = 0.93333334
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D/Head:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.93333334, 0.98),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(65, -55), Vector2(65, -55), Vector2(65, -35)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/Head:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.93333334, 0.98),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-0.11307928, -0.04757095, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node2D/RightArm/RightHand/Sword:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(5.490532, -1.4290771), Vector2(10.0853195, -3.40094)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Node2D/RightArm/RightHand/Sword:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -0.07362578]
+}
+
+[sub_resource type="Animation" id="Animation_2g05n"]
+resource_name = "Jump"
+
+[sub_resource type="Animation" id="Animation_lkv8n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D/Head:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(54, -75)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/Head:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node2D/RightArm/RightHand/Sword:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(20.000015, 255)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Node2D/RightArm/RightHand/Sword:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Node2D/RightArm:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(7, 184)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Node2D/RightArm:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.2445824]
+}
+
+[sub_resource type="Animation" id="Animation_8kfo6"]
+resource_name = "Walk"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gkwvw"]
+_data = {
+&"Attack": SubResource("Animation_2ms5u"),
+&"Idle": SubResource("Animation_bjgfi"),
+&"Jump": SubResource("Animation_2g05n"),
+&"RESET": SubResource("Animation_lkv8n"),
+&"Walk": SubResource("Animation_8kfo6")
+}
+
+[node name="Seer" type="Node2D" unique_id=746514392]
+
+[node name="Node2D" type="Node2D" parent="." unique_id=141514206]
+position = Vector2(-17, -70)
+scale = Vector2(0.2, 0.2)
+
+[node name="LeftLeg" type="Sprite2D" parent="Node2D" unique_id=1076693609]
+position = Vector2(127, 313)
+texture = ExtResource("1_lkv8n")
+
+[node name="RightLeg" type="Sprite2D" parent="Node2D" unique_id=1538651497]
+position = Vector2(47, 311)
+texture = ExtResource("2_sfh8q")
+
+[node name="LeftHand" type="Sprite2D" parent="Node2D" unique_id=1896582396]
+position = Vector2(184, 230)
+texture = ExtResource("3_27n2b")
+
+[node name="LeftArm" type="Sprite2D" parent="Node2D" unique_id=222612218]
+position = Vector2(167, 175)
+texture = ExtResource("4_2mely")
+
+[node name="Body" type="Sprite2D" parent="Node2D" unique_id=734262555]
+position = Vector2(82, 188)
+texture = ExtResource("5_r8nvo")
+
+[node name="Head" type="Sprite2D" parent="Node2D" unique_id=954795110]
+position = Vector2(54, -75)
+texture = ExtResource("6_fv08n")
+
+[node name="Face01" type="Sprite2D" parent="Node2D/Head" unique_id=554445934]
+position = Vector2(50, 90)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("7_13bjv")
+
+[node name="RightArm" type="Sprite2D" parent="Node2D" unique_id=1881823907]
+position = Vector2(7, 184)
+rotation = -1.2445824
+texture = ExtResource("9_7ynyw")
+
+[node name="RightHand" type="Sprite2D" parent="Node2D/RightArm" unique_id=29026335]
+position = Vector2(-1, 54.99997)
+scale = Vector2(0.9999998, 0.9999998)
+texture = ExtResource("8_2v773")
+
+[node name="Sword" type="Sprite2D" parent="Node2D/RightArm/RightHand" unique_id=992935733]
+position = Vector2(20.000015, 255)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("10_tb0vb")
+offset = Vector2(132.99998, 1.0000076)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1654467086]
+libraries/ = SubResource("AnimationLibrary_gkwvw")

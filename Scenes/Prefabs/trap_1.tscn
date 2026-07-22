@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cb8e62red7kc0"]
 
-[ext_resource type="Texture2D" uid="uid://jaegp53ccc7w" path="res://Assets/Spritesheet/platformPack_tilesheet.png" id="2_ai3ps"]
+[ext_resource type="Texture2D" uid="uid://2tt6bytgw6dk" path="res://Assets/fireball/Water Arrow_Frame_01.png" id="1_rf4eo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dhnh1"]
 radius = 31.06445
@@ -76,11 +76,10 @@ shape = SubResource("CircleShape2D_dhnh1")
 
 [node name="Node2D" type="Node2D" parent="CollisionShape2D" unique_id=1512725227]
 
-[node name="PlatformPackTilesheet" type="Sprite2D" parent="CollisionShape2D/Node2D" unique_id=278385234]
-texture = ExtResource("2_ai3ps")
-hframes = 14
-vframes = 7
-frame = 71
+[node name="WaterArrowFrame01" type="Sprite2D" parent="CollisionShape2D/Node2D" unique_id=388776151]
+position = Vector2(21.00003, -2.0000005)
+scale = Vector2(0.23541667, 0.4138889)
+texture = ExtResource("1_rf4eo")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1517398424]
 libraries/ = SubResource("AnimationLibrary_mubd7")

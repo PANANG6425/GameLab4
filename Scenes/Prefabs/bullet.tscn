@@ -2,25 +2,83 @@
 
 [ext_resource type="Texture2D" uid="uid://dsqhpet4dfpn8" path="res://Assets/Spritesheet/bullet.png" id="1_pkqe3"]
 [ext_resource type="Script" uid="uid://lfkiq2j22hff" path="res://Scenes/Prefabs/bullet.gd" id="1_yovq8"]
+[ext_resource type="Texture2D" uid="uid://cnehssk1iwsdp" path="res://Assets/Seer1/SlashFX.png" id="3_cjoyj"]
+[ext_resource type="Texture2D" uid="uid://dsgc2c2ximtp3" path="res://Assets/fire/Fire Arrow_Frame_01.png" id="4_aw57k"]
+[ext_resource type="Texture2D" uid="uid://cp75vyqimd8hb" path="res://Assets/fire/Fire Arrow_Frame_02.png" id="5_07s10"]
+[ext_resource type="Texture2D" uid="uid://cmhsekeals7yw" path="res://Assets/fire/Fire Arrow_Frame_03.png" id="6_uspdm"]
+[ext_resource type="Texture2D" uid="uid://bv3uogd4jvsvf" path="res://Assets/fire/Fire Arrow_Frame_04.png" id="7_umr1p"]
+[ext_resource type="Texture2D" uid="uid://bnnibdu5n5hcr" path="res://Assets/fire/Fire Arrow_Frame_05.png" id="8_na54k"]
+[ext_resource type="Texture2D" uid="uid://jndp30oxwrr" path="res://Assets/fire/Fire Arrow_Frame_06.png" id="9_0ifh3"]
+[ext_resource type="Texture2D" uid="uid://c6as48x0wl4nd" path="res://Assets/fire/Fire Arrow_Frame_07.png" id="10_188od"]
+[ext_resource type="Texture2D" uid="uid://c3bkjusup1sse" path="res://Assets/fire/Fire Arrow_Frame_08.png" id="11_fv60f"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_pkqe3"]
 friction = 0.5
 bounce = 0.8
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_xfvfm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_aw57k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_07s10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_uspdm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_umr1p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_na54k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_0ifh3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_188od")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_fv60f")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 20.0
+}]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_mqoqv"]
-radius = 6.708204
+radius = 6.0827627
 
 [node name="Bullet" type="RigidBody2D" unique_id=737966296 groups=["Bullet"]]
 collision_layer = 2
 collision_mask = 5
 physics_material_override = SubResource("PhysicsMaterial_pkqe3")
+gravity_scale = 0.8
 script = ExtResource("1_yovq8")
+
+[node name="Bullet" type="Sprite2D" parent="." unique_id=308939572]
+visible = false
+position = Vector2(-0.1641778, -0.3124994)
+scale = Vector2(0.24490353, 0.2572188)
+texture = ExtResource("1_pkqe3")
+
+[node name="SlashFx2" type="Sprite2D" parent="." unique_id=1707583114]
+visible = false
+position = Vector2(17, 17)
+rotation = -4.168408
+scale = Vector2(0.09919823, 0.09957781)
+texture = ExtResource("3_cjoyj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=103430576]
+position = Vector2(-28, 1.0000019)
+scale = Vector2(0.17031251, 0.34765628)
+sprite_frames = SubResource("SpriteFrames_xfvfm")
+frame = 5
+frame_progress = 0.4318271
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=441138516]
 rotation = 1.5707964
 shape = SubResource("CircleShape2D_mqoqv")
-
-[node name="Bullet" type="Sprite2D" parent="." unique_id=308939572]
-position = Vector2(-0.1641778, -0.3124994)
-scale = Vector2(0.24490353, 0.2572188)
-texture = ExtResource("1_pkqe3")

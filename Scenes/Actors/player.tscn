@@ -5,9 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://dxp77wq60c2rr" path="res://Assets/Textures/CloudTexture.png" id="3_6q7nd"]
 [ext_resource type="PackedScene" uid="uid://bvoon20abmdym" path="res://Scenes/Sprites/student.tscn" id="4_pdd2n"]
 [ext_resource type="Texture2D" uid="uid://dia1dp34sme5l" path="res://Assets/Spritesheet/light_w.png" id="4_wn7ci"]
+[ext_resource type="PackedScene" uid="uid://bqxn4j75lvl1k" path="res://Scenes/Sprites/seer1.tscn" id="5_sfcrp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n4sts"]
-radius = 20.985498
+radius = 17.985924
 height = 69.99915
 
 [sub_resource type="Curve" id="Curve_m2jh0"]
@@ -19,13 +20,15 @@ offsets = PackedFloat32Array(0.25, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvbjh"]
-size = Vector2(43.99997, 123.99858)
+size = Vector2(40.999523, 112.999435)
 
 [node name="Player" type="CharacterBody2D" unique_id=2106209264 groups=["Player"]]
 rotation = 0.00042652956
 collision_layer = 2
 script = ExtResource("1_mqoqv")
+jump_force = 600.0
 bullet_scene = ExtResource("2_4fuvf")
+double_jump = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1840880435]
 position = Vector2(2.08165e-12, -33)
@@ -74,8 +77,8 @@ position = Vector2(2.08165e-12, -48)
 collision_mask = 13
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collision" unique_id=69876643]
-position = Vector2(-2.0268738, -8.998505)
-scale = Vector2(1.0000011, 1.0000011)
+position = Vector2(0.47547323, -3.4997826)
+scale = Vector2(1.0000014, 1.0000014)
 shape = SubResource("RectangleShape2D_tvbjh")
 
 [node name="LightW" type="Sprite2D" parent="." unique_id=900370792]
@@ -84,7 +87,12 @@ position = Vector2(-0.9982939, -40.999577)
 scale = Vector2(1.0000001, 1.0000001)
 texture = ExtResource("4_wn7ci")
 
+[node name="Seer" parent="." unique_id=746514392 instance=ExtResource("5_sfcrp")]
+position = Vector2(-0.9999924, 0.00042533875)
+scale = Vector2(1.0000002, 1.0000002)
+
 [node name="student" parent="." unique_id=1717188345 instance=ExtResource("4_pdd2n")]
+visible = false
 position = Vector2(-0.9982939, 4.0004263)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1467812523]

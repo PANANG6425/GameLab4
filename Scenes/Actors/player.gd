@@ -28,8 +28,8 @@ var is_attacking = false
 var shoot_cooldown_timer = 0.0
 var can_damage = true
 
-@onready var player_sprite : AnimationPlayer = $student/AnimationPlayer
-@onready var player_node = $student
+@onready var player_sprite : AnimationPlayer = $Seer/AnimationPlayer
+@onready var player_node = $Seer
 @onready var bullet_marker = $BulletMarker
 @onready var particle_trails = $ParticleTrails
 @onready var death_particles = $DeathParticles
